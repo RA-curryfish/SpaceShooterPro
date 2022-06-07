@@ -6,13 +6,8 @@ env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
 
 jobs:
-<<<<<<< HEAD:.github/workflows/deploy.yml
   buildWebGL:
     name: Build for WebGL
-=======
-  build:
-    name: Deploy
->>>>>>> 2f611c4095fbe6afa0e6c2fe7844d91a9fb9f51b:.github/workflows/main.yml
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -42,41 +37,14 @@ jobs:
           path: Library
           key: Library-build-WebGL
           restore-keys: |
-<<<<<<< HEAD:.github/workflows/deploy.yml
             Library-build-
             Library-
 
       - uses: game-ci/unity-builder@v2
-=======
-            Library-
-
-      - name: Build project
-        uses: game-ci/unity-builder@v2
-        env:
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
-          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
->>>>>>> 2f611c4095fbe6afa0e6c2fe7844d91a9fb9f51b:.github/workflows/main.yml
         with:
           targetPlatform: WebGL
-<<<<<<< Updated upstream:.github/workflows/main.yml
-      
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: build-WebGL
-          path: build/WebGL
-      
-      - name: Download Artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: build-WebGL
-          path: build
-=======
           unityVersion: 2021.3.1f1
->>>>>>> Stashed changes:.github/workflows/deploy.yml
 
-<<<<<<< HEAD:.github/workflows/deploy.yml
       - uses: actions/upload-artifact@v2
         with:
           name: build-WebGL
@@ -100,12 +68,3 @@ jobs:
         with:
           branch: gh-pages
           folder: build/WebGL
-=======
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.4
-        with:
-          branch: gh-pages
-          folder: build/WebGL
-          commit-message: Deploy
-          single-commit: true
->>>>>>> 2f611c4095fbe6afa0e6c2fe7844d91a9fb9f51b:.github/workflows/main.yml
