@@ -59,6 +59,7 @@ jobs:
 >>>>>>> 2f611c4095fbe6afa0e6c2fe7844d91a9fb9f51b:.github/workflows/main.yml
         with:
           targetPlatform: WebGL
+<<<<<<< Updated upstream:.github/workflows/main.yml
       
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
@@ -71,6 +72,9 @@ jobs:
         with:
           name: build-WebGL
           path: build
+=======
+          unityVersion: 2021.3.1f1
+>>>>>>> Stashed changes:.github/workflows/deploy.yml
 
 <<<<<<< HEAD:.github/workflows/deploy.yml
       - uses: actions/upload-artifact@v2
