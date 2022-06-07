@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    name: Deploy 
+    name: Build Project 
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -22,9 +22,10 @@ jobs:
       - name: Cache Library
         uses: actions/cache@v2
         with:
-          path: UnityWebGLDeploy/Library
+          path: Library
           key: Library-${{ github.sha }}
-          restore-keys: Library-
+          restore-keys: |
+            Library-
 
       - name: Build project
         uses: game-ci/unity-builder@v2
